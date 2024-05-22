@@ -1,0 +1,12 @@
+﻿<UserControl x:Class="instailerJarvis.vector2"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:instailerJarvis"
+             mc:Ignorable="d" 
+            d:DesignHeight="1080" d:DesignWidth="1920">
+    <Grid>
+        <Path HorizontalAlignment="Center" Fill="#4466FF"  Data="M237.522 4.80618C300.309 11.402 355.903 39.5152 402.447 82.1035C451.656 127.13 500.37 180.145 501.96 246.768C503.574 314.444 456.369 369.619 410.495 419.467C361.818 472.36 309.205 528.001 237.522 534.112C161.135 540.625 80.6041 511.114 32.2509 451.715C-13.0467 396.069 3.33842 318.474 3.61218 246.768C3.8842 175.519 -15.7492 94.6431 33.8099 43.3779C83.7071 -8.23695 166.068 -2.70016 237.522 4.80618Z"/>
+    </Grid>
+</UserControl>

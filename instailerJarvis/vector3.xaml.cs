@@ -16,18 +16,13 @@ using System.Windows.Shapes;
 namespace instailerJarvis
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Логика взаимодействия для vector3.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class vector3 : UserControl
     {
-        public MainWindow()
+        public vector3()
         {
             InitializeComponent();
-        }
-
-        private void vector2_Loaded(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }

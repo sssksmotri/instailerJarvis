@@ -5,8 +5,24 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:instailerJarvis"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+        Title="MainWindow" MinHeight="600" MinWidth="850" Background="Black" >
+    <Canvas>
+        <local:vector5 Canvas.Left="-94" Canvas.Top="-563" Width="1281" Height="1200" Opacity="0.2" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <local:vector1 x:Name="vector1" Canvas.Left="223" Canvas.Top="-250" Width="404" Height="382" Opacity="0.4" HorizontalAlignment="Left" VerticalAlignment="Top" />
+        <local:vector6 Canvas.Left="-94" Canvas.Top="-722" Width="1100" Height="1100" Opacity="0.3" HorizontalAlignment="Left" VerticalAlignment="Top" />
+        <local:vector4 Canvas.Left="-142" Canvas.Top="-682" Width="1392" Height="1040" Opacity="0.3" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Left" VerticalAlignment="Top" >
+            <local:vector4.RenderTransform>
+                <RotateTransform Angle="-105.14"/>
+            </local:vector4.RenderTransform>
+        </local:vector4>
+
+        <local:vector2 Canvas.Left="174" Canvas.Top="-320" Width="502" Height="534" Opacity="0.3" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <local:vector0 Canvas.Left="278" Canvas.Top="-206" Width="294" Height="294" Opacity="1" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <!-- Кнопка "Звук" -->
+
+        <!-- Кнопка "Отмена" -->
+        <Button Content="Отмена" Canvas.Left="10" Canvas.Bottom="10" Width="75" Height="30"/>
+
+        <ProgressBar Value="60" Canvas.Bottom="50" Canvas.Left="50" Width="780" Height="20" />
+    </Canvas>
 </Window>
