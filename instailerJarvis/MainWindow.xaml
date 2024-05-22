@@ -83,7 +83,7 @@
             <local:vector0 Canvas.Left="278" Canvas.Top="203" Width="294" Height="294" Opacity="1" HorizontalAlignment="Center" VerticalAlignment="Top">
                 <Button Width="220" Height="150" Style="{StaticResource TransparentButton}" BorderBrush="Transparent" Content="Запустить" FontFamily="Segoe UI Variable" Click="Zapusk1" Foreground="White" FontSize="34"></Button>
             </local:vector0>
-            <Button Content="Отмена" Canvas.Left="36" Canvas.Top="584" Width="136" Height="57" 
+            <Button Content="Отмена" Click="otmena" Canvas.Left="36" Canvas.Top="584" Width="136" Height="57" 
                 BorderThickness="2" 
                 Style="{StaticResource TransparentButton}"
                 HorizontalAlignment="Center" VerticalAlignment="Center"/>

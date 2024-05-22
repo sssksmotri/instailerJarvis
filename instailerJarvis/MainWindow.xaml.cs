@@ -33,5 +33,10 @@ namespace instailerJarvis
             zapusk.Show();
             this.Close();
         }
+
+        private void otmena(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
     }
 }

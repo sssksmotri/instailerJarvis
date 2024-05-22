@@ -14,9 +14,9 @@
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
                         <Border Background="{TemplateBinding Background}" 
-                        BorderBrush="{TemplateBinding BorderBrush}" 
-                        BorderThickness="{TemplateBinding BorderThickness}" 
-                        CornerRadius="15" >
+                                BorderBrush="{TemplateBinding BorderBrush}" 
+                                BorderThickness="{TemplateBinding BorderThickness}" 
+                                CornerRadius="15">
                             <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
                         </Border>
                         <ControlTemplate.Triggers>
@@ -28,8 +28,47 @@
                 </Setter.Value>
             </Setter>
         </Style>
-        <Style x:Key="textdesign" TargetType="TextBlock">
-            
+        <Style x:Key="TransparentButton2" TargetType="Button">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="Border" Background="{TemplateBinding Background}" 
+                        BorderBrush="{TemplateBinding BorderBrush}" 
+                        BorderThickness="{TemplateBinding BorderThickness}" 
+                        CornerRadius="3">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsEnabled" Value="True">
+                                <Setter TargetName="Border" Property="Background" Value="LightGray"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="TransparentButton3" TargetType="Button">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="Border" Background="{TemplateBinding Background}" 
+                 BorderBrush="{TemplateBinding BorderBrush}" 
+                 BorderThickness="{TemplateBinding BorderThickness}" 
+                 CornerRadius="3">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="Border" Property="Background" Value="LightGray"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
         </Style>
     </Window.Resources>
     <Grid>
@@ -42,11 +81,38 @@
             </local:vector4>
             <local:vector0 Canvas.Left="706" Canvas.Top="203" Width="294" Height="294" Opacity="1" HorizontalAlignment="Left" VerticalAlignment="Center"/>
             <local:vector2 Canvas.Left="515" Canvas.Top="83" Width="502" Height="534" Opacity="0.3" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-            <local:vector1 x:Name="vector1" Canvas.Left="596" Canvas.Top="159" Width="404" Height="382" Opacity="0.4" HorizontalAlignment="Left" VerticalAlignment="Center" Loaded="vector1_Loaded"/>
-            <Button Content="Отмена" Canvas.Left="10" Canvas.Top="584" Width="136" Height="57" 
+            <local:vector1 x:Name="vector1" Canvas.Left="596" Canvas.Top="159" Width="404" Height="382" Opacity="0.4" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <Button Content="Отмена" Canvas.Left="44" Canvas.Top="620" Click="otmena" Width="136" Height="57" 
                 BorderThickness="2" 
-                Style="{StaticResource TransparentButton}" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                Style="{StaticResource TransparentButton}" HorizontalAlignment="Left" VerticalAlignment="Center"/>
         </Canvas>
-        <TextBlock Width="400" Height="300" VerticalAlignment="Top"  Background="#4466FF"  Margin="15" HorizontalAlignment="Left"></TextBlock>
+        <StackPanel Margin="15" Height="500" VerticalAlignment="Top" HorizontalAlignment="Left">
+            <Border  Background="#4466FF" Width="495" Height="219" CornerRadius="16" HorizontalAlignment="Left" Margin="20">
+                <StackPanel>
+                    <TextBlock Text="JARVIS STANDART" FontSize="24" FontWeight="Bold" Foreground="White" Margin="0,0,0,10" HorizontalAlignment="Left" Padding="10"/>
+                    <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20" FontFamily="Segoe UI Variable" TextWrapping="Wrap"
+                               Text="это голосовой помощник, способный управлять вашим ПК с помощью голоса. 
+Он предоставляет удобные функции для выполнения различных задач, не требуя физического взаимодействия с компьютером" Foreground="White"/>
+                </StackPanel>
+            </Border>
+            <Border x:Name="Border" Background="#2c2a2a" Width="495" CornerRadius="16" Padding="5" >
+                <Grid>
+                    <TextBlock x:Name="SecondTextBlock" VerticalAlignment="Center" HorizontalAlignment="Center" TextWrapping="Wrap" Padding="5" FontSize="20" FontFamily="Segoe UI Variable" 
+                       Text="Jarvis также поддерживает персонализацию, позволяя настроить его под ваши предпочтения и потребности. Вы можете настроить язык, голос и другие параметры, чтобы Jarvis был максимально удобным для вас" Foreground="White"/>
+
+                    <!-- Обновленное размещение кнопок и добавлены отступы -->
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="0,20,0,0" >
+                        <Button Width="110" Height="7" Margin="0,15,0,0"   Style="{StaticResource TransparentButton2}" Click="Button_Click"/>
+                        <Button Width="110" Height="7" Margin="20,15,0,0"   Style="{StaticResource TransparentButton3}" Click="Button_Click_1"/>
+                    </StackPanel>
+                </Grid>
+            </Border>
+        </StackPanel>
+        <StackPanel Width="656" Height="75" HorizontalAlignment="Right" VerticalAlignment="Bottom">
+            <Button Content="Пользовательское соглашение" Width="359" HorizontalAlignment="Center"  VerticalAlignment="Bottom" Height="57"  
+               Style="{StaticResource TransparentButton}" Background="#4466FF"/>
+        </StackPanel>
+        <Button Content="Далее" Width="122" Height="57" 
+         Style="{StaticResource TransparentButton}" Background="#4466FF"  HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="18.0" Click="Button_Click_2"/>
     </Grid>
 </Window>

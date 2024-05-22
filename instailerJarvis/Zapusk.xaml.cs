@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 
 namespace instailerJarvis
 {
@@ -19,16 +20,47 @@ namespace instailerJarvis
     /// </summary>
     public partial class Zapusk : Window
     {
+        private DispatcherTimer _timer;
+
         public Zapusk()
         {
             InitializeComponent();
+            StartProgress();
         }
 
-        
-
-        private void Zapusk1(object sender, RoutedEventArgs e)
+        private void StartProgress()
         {
+            _timer = new DispatcherTimer();
+            _timer.Interval = TimeSpan.FromSeconds(0.01);
+            _timer.Tick += Timer_Tick;
+            _timer.Start();
+        }
 
+        private void Timer_Tick(object sender, EventArgs e)
+        {
+            if (progressBar.Value < 100)
+            {
+                progressBar.Value += 1;
+            }
+            else
+            {
+                _timer.Stop();
+                NavigateToNextPage();
+            }
+        }
+
+        private void NavigateToNextPage()
+        {
+            jarvisdalee jarvisdalee = new jarvisdalee(); // Replace 'NextPage' with your next window/page class
+            jarvisdalee.Show();
+            this.Close();
+        }
+    
+
+        
+        private void otmena(object sender, RoutedEventArgs e)
+        {
+            Close();
         }
     }
 }

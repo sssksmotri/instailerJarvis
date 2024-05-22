@@ -84,7 +84,7 @@
                                 <Trigger Property="IsChecked" Value="True">
                                     <Setter TargetName="rectangle" Property="RenderTransform">
                                         <Setter.Value>
-                                            <TranslateTransform X="40"/>
+                                            <TranslateTransform X="30"/>
                                         </Setter.Value>
                                     </Setter>
                                 </Trigger>
@@ -105,25 +105,24 @@
                 </local:vector4.RenderTransform>
             </local:vector4>
             <StackPanel Canvas.Left="10" Canvas.Top="10" Orientation="Horizontal">
-                <TextBlock Text="Звук" Foreground="White" FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Left" />
-                <ToggleButton x:Name="soundToggleButton" Width="50"  Height="28" Style="{StaticResource CustomToggleButton}" Margin="10,0"/>
+                <TextBlock Text="Звук" Foreground="White" FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                <ToggleButton x:Name="soundToggleButton" Width="50" Height="28" Style="{StaticResource CustomToggleButton}" Margin="10,0"/>
             </StackPanel>
             <local:vector1 x:Name="vector1" Canvas.Left="223" Canvas.Top="-32" Width="404" Height="382" Opacity="0.4" HorizontalAlignment="Left" VerticalAlignment="Top"/>
             <local:vector2 Canvas.Left="215" Canvas.Top="-95" Width="502" Height="534" Opacity="0.3" HorizontalAlignment="Center" VerticalAlignment="Top"/>
             <local:vector0 Canvas.Left="278" Canvas.Top="-32" Width="294" Height="294" Opacity="1" HorizontalAlignment="Left" VerticalAlignment="Top"/>
 
-            <Button Content="Отмена" Canvas.Left="679" Canvas.Top="505" Width="136" Height="57" 
+            <Button Content="Отмена" Click="otmena" Canvas.Left="679" Canvas.Top="505" Width="136" Height="57" 
                 BorderThickness="2" 
                 Style="{StaticResource TransparentButton}"
                 HorizontalAlignment="Left" VerticalAlignment="Top"/>
 
-            <ProgressBar x:Name="progressBar" Value="10" Canvas.Bottom="50" Canvas.Left="35" Width="780" Height="16" 
+            <ProgressBar x:Name="progressBar" Value="0" Canvas.Bottom="50" Canvas.Left="35" Width="780" Height="16" 
                      Foreground="#4466FF" Style="{StaticResource RoundedProgressBar}" Background="Transparent" Opacity="1" HorizontalAlignment="Center" Canvas.Top="604" VerticalAlignment="Top"/>
 
             <!-- TextBlock for displaying percentage -->
             <TextBlock x:Name="progressText" Text="{Binding Value, ElementName=progressBar, StringFormat=\{0\}%}"
                    Canvas.Bottom="100" Canvas.Left="45" Foreground="White" FontSize="16"/>
-            
         </Canvas>
     </Grid>
 </Window>
