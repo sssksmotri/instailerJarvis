@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:instailerJarvis"
         mc:Ignorable="d"
-        Title="jarvisdalee"  MaxHeight="700" MaxWidth="850"  MinHeight="700" MinWidth="850" WindowStyle="None" Background="Black">
+        Title="jarvisdalee" WindowState="Maximized" WindowStartupLocation="CenterOwner" MaxHeight="700" MaxWidth="850"  MinHeight="700" MinWidth="850"  Background="Black">
     <Window.Resources>
         <Style x:Key="TransparentButton" TargetType="Button">
             <Setter Property="Background" Value="Transparent"/>
@@ -82,13 +82,15 @@
             <local:vector0 Canvas.Left="706" Canvas.Top="203" Width="294" Height="294" Opacity="1" HorizontalAlignment="Left" VerticalAlignment="Center"/>
             <local:vector2 Canvas.Left="515" Canvas.Top="83" Width="502" Height="534" Opacity="0.3" HorizontalAlignment="Left" VerticalAlignment="Top"/>
             <local:vector1 x:Name="vector1" Canvas.Left="596" Canvas.Top="159" Width="404" Height="382" Opacity="0.4" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-            <Button Content="Отмена" Canvas.Left="44" Canvas.Top="620" Click="otmena" Width="136" Height="57" 
-                BorderThickness="2" 
-                Style="{StaticResource TransparentButton}" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <StackPanel  Width="150" Height="75" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Bottom" Canvas.Left="34" Canvas.Top="582" >
+                <Button Content="Отмена" Width="136" Height="57" VerticalAlignment="Bottom"
+     Style="{StaticResource TransparentButton}" FontSize="20" HorizontalAlignment="Left" FontFamily="Segoe UI Variable" Click="otmena" Canvas.Left="44" Canvas.Top="598"/>
+            </StackPanel>
+
         </Canvas>
         <StackPanel Margin="15" Height="500" VerticalAlignment="Top" HorizontalAlignment="Left">
             <Border  Background="#4466FF" Width="495" Height="219" CornerRadius="16" HorizontalAlignment="Left" Margin="20">
-                <StackPanel>
+                <StackPanel >
                     <TextBlock Text="JARVIS STANDART" FontSize="24" FontWeight="Bold" Foreground="White" Margin="0,0,0,10" HorizontalAlignment="Left" Padding="10"/>
                     <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20" FontFamily="Segoe UI Variable" TextWrapping="Wrap"
                                Text="это голосовой помощник, способный управлять вашим ПК с помощью голоса. 
@@ -99,8 +101,6 @@
                 <Grid>
                     <TextBlock x:Name="SecondTextBlock" VerticalAlignment="Center" HorizontalAlignment="Center" TextWrapping="Wrap" Padding="5" FontSize="20" FontFamily="Segoe UI Variable" 
                        Text="Jarvis также поддерживает персонализацию, позволяя настроить его под ваши предпочтения и потребности. Вы можете настроить язык, голос и другие параметры, чтобы Jarvis был максимально удобным для вас" Foreground="White"/>
-
-                    <!-- Обновленное размещение кнопок и добавлены отступы -->
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="0,20,0,0" >
                         <Button Width="110" Height="7" Margin="0,15,0,0"   Style="{StaticResource TransparentButton2}" Click="Button_Click"/>
                         <Button Width="110" Height="7" Margin="20,15,0,0"   Style="{StaticResource TransparentButton3}" Click="Button_Click_1"/>
@@ -108,11 +108,12 @@
                 </Grid>
             </Border>
         </StackPanel>
-        <StackPanel Width="656" Height="75" HorizontalAlignment="Right" VerticalAlignment="Bottom">
-            <Button Content="Пользовательское соглашение" Width="359" HorizontalAlignment="Center"  VerticalAlignment="Bottom" Height="57"  
-               Style="{StaticResource TransparentButton}" Background="#4466FF"/>
+        <StackPanel Width="500" Height="75" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,18,18">
+            <Button Content="Пользовательское соглашение" Width="359" Height="57" Click="polsa"  
+               Style="{StaticResource TransparentButton}" FontSize="20" FontFamily="Segoe UI Variable" Background="#4466FF"/>
+
+            <Button Content="Далее" Width="122" Height="57" 
+                Style="{StaticResource TransparentButton}" FontSize="20" FontFamily="Segoe UI Variable" Background="#4466FF" HorizontalAlignment="Right"  Margin="18,0,0,0" Click="Button_Click_2"/>
         </StackPanel>
-        <Button Content="Далее" Width="122" Height="57" 
-         Style="{StaticResource TransparentButton}" Background="#4466FF"  HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="18.0" Click="Button_Click_2"/>
     </Grid>
 </Window>

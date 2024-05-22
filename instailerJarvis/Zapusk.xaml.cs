@@ -51,7 +51,7 @@ namespace instailerJarvis
 
         private void NavigateToNextPage()
         {
-            jarvisdalee jarvisdalee = new jarvisdalee(); // Replace 'NextPage' with your next window/page class
+            jarvisdalee jarvisdalee = new jarvisdalee(); 
             jarvisdalee.Show();
             this.Close();
         }

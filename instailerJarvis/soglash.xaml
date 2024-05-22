@@ -1,0 +1,71 @@
+﻿<Window x:Class="instailerJarvis.soglash"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:instailerJarvis"
+        mc:Ignorable="d"
+        Title="soglash" WindowState="Maximized" WindowStartupLocation="CenterOwner" MaxHeight="700" MaxWidth="850"  MinHeight="700" MinWidth="850"  Background="Black">
+    <Window.Resources>
+        <Style x:Key="TransparentButton" TargetType="Button">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" 
+                              BorderBrush="{TemplateBinding BorderBrush}" 
+                              BorderThickness="{TemplateBinding BorderThickness}" 
+                              CornerRadius="15">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Opacity" Value="0.8"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <Grid>
+
+        <StackPanel VerticalAlignment="Top" Margin="0,10,0,0">
+            <local:lux></local:lux>
+            <Button  Width="350" Margin="0,20,0,0" Height="35" HorizontalAlignment="Left" FontFamily="Segoe UI Variable" Content="Пользовательское соглашение"  
+            Style="{StaticResource TransparentButton}" FontSize="20"  Background="#4466FF"/>
+        </StackPanel>
+        <Border HorizontalAlignment="Center" Background="#2c2a2a" VerticalAlignment="Center" CornerRadius="29" Width="780" Height="359">
+            <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled" >
+                <TextBlock Foreground="White" FontSize="20" FontFamily="Segoe UI Variable" TextWrapping="Wrap" Padding="20" Height="443">
+                    1. Право использования:
+                    Настоящая программа является коммерческим продуктом и может быть использована только после приобретения лицензии у The Lux. 
+                    Покупка лицензии дает вам ограниченное, неисключительное право использовать данную программу в соответствии с условиями 
+                    настоящей лицензии.
+                    2. Запрет распространения:
+                    Запрещается распространять, передавать, продавать, арендовать, лицензировать или предоставлять доступ к данной программе 
+                    третьим лицам без предварительного письменного согласия The Lux.
+                     1. Право использования:
+ Настоящая программа является коммерческим продуктом и может быть использована только после приобретения лицензии у The Lux. 
+ Покупка лицензии дает вам ограниченное, неисключительное право использовать данную программу в соответствии с условиями 
+ настоящей лицензии.
+ 2. Запрет распространения:
+ Запрещается распространять, передавать, продавать, арендовать, лицензировать или предоставлять доступ к данной программе 
+ третьим лицам без предварительного письменного согласия The Lux.
+                </TextBlock>
+            </ScrollViewer>
+        </Border>
+        <TextBlock Width="359" Height="Auto" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="35,0,0,79" Foreground="White">
+    ЛИЦЕНЗИЯ JARVIS-LUX
+    <LineBreak />
+    Ⓒ2023 PC CONTROL все права защищены.Автор: @Thee_lux
+        </TextBlock>
+        <Button Content="Далее" Width="122" Height="57" 
+        Style="{StaticResource TransparentButton}" FontSize="20" FontFamily="Segoe UI Variable" Background="#4466FF"  HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,18,18" Click="Button_Click"/>
+
+        <Button Content="Отмена" Width="122" Height="57" Margin="10,0,14,14" FontSize="20" FontFamily="Segoe UI Variable" Click="otmena" 
+        BorderThickness="2" 
+        Style="{StaticResource TransparentButton}" HorizontalAlignment="Left" VerticalAlignment="Bottom" />
+    </Grid>
+</Window>

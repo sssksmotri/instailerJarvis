@@ -40,22 +40,28 @@ namespace instailerJarvis
             Border border = new Border();
             border.Height = SecondTextBlock.ActualHeight + 58;
             SecondTextBlock.Text = "С помощью Jarvis вы сможете открывать приложения, выполнить поиск в интернете, управлять музыкой, установить напоминания, создавать и редактировать документы, отправлять электронные письма и многое другое - все это лишь сказав нужную команду вслух. Его голосовые функции позволяют вам выполнить задачи быстро и без усилий";
-
+            
             // Manually update window height (in case the height doesn't change automatically)
             
         }
+        
 
-
-        private void otmena(object sender, RoutedEventArgs e)
+            private void otmena(object sender, RoutedEventArgs e)
         {
             Close();
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
-            Border border = new Border();
-            border.Height = SecondTextBlock.ActualHeight + 58;
-            SecondTextBlock.Text = "С помощью Jarvis вы сможете открывать приложения, выполнить поиск в интернете, управлять музыкой, установить напоминания, создавать и редактировать документы, отправлять электронные письма и многое другое - все это лишь сказав нужную команду вслух. Его голосовые функции позволяют вам выполнить задачи быстро и без усилий";
+            //Border border = new Border();
+            //border.Height = SecondTextBlock.ActualHeight + 58;
+            //SecondTextBlock.Text = "С помощью Jarvis вы сможете открывать приложения, выполнить поиск в интернете, управлять музыкой, установить напоминания, создавать и редактировать документы, отправлять электронные письма и многое другое - все это лишь сказав нужную команду вслух. Его голосовые функции позволяют вам выполнить задачи быстро и без усилий";
+        }
+
+        private void polsa(object sender, RoutedEventArgs e)
+        {
+            soglash soglash = new soglash();
+            soglash.Show();
         }
     }
 }
