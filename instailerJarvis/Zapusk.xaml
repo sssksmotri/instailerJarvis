@@ -1,11 +1,11 @@
-﻿<Window x:Class="instailerJarvis.MainWindow"
+﻿<Window x:Class="instailerJarvis.Zapusk"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:instailerJarvis"
         mc:Ignorable="d"
-        Title="MainWindow" MaxHeight="700" MaxWidth="850"  MinHeight="700" MinWidth="850" WindowStyle="None" Background="Black" >
+               Title="Zapusk" MaxHeight="700" MaxWidth="850"  MinHeight="700" MinWidth="850" WindowStyle="None" Background="Black" >
     <Window.Resources>
         <!-- Material Design Resource Dictionaries -->
         <ResourceDictionary>
@@ -13,6 +13,36 @@
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Light.xaml"/>
             </ResourceDictionary.MergedDictionaries>
 
+            <!-- Шаблон для ProgressBar с округлыми углами -->
+            <Style x:Key="RoundedProgressBar" TargetType="ProgressBar">
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="ProgressBar">
+                            <Grid>
+                                <Border Background="{TemplateBinding Background}" 
+                                        BorderBrush="{TemplateBinding BorderBrush}" 
+                                        BorderThickness="1" 
+                                        CornerRadius="10" />
+                                <!-- Округление углов -->
+                                <Border x:Name="PART_Track" 
+                                        Background="{TemplateBinding Background}" 
+                                        CornerRadius="10" />
+                                <Border x:Name="PART_Indicator" 
+                                        Background="{TemplateBinding Foreground}" 
+                                        CornerRadius="10" HorizontalAlignment="Left"/>
+                            </Grid>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsIndeterminate" Value="True">
+                                    <Setter TargetName="PART_Indicator" Property="Visibility" Value="Collapsed" />
+                                </Trigger>
+                                <Trigger Property="IsIndeterminate" Value="False">
+                                    <Setter TargetName="PART_Indicator" Property="Visibility" Value="Visible" />
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
 
             <!-- Шаблон для кнопки с закругленными углами -->
             <Style x:Key="TransparentButton" TargetType="Button">
@@ -67,9 +97,9 @@
     </Window.Resources>
     <Grid>
         <Canvas>
-            <local:vector6 Canvas.Left="-91" Canvas.Top="-319" Width="1100" Height="1100" Opacity="0.3" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-            <local:vector5 Canvas.Left="-91" Canvas.Top="-160" Width="1281" Height="1200" Opacity="0.2" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-            <local:vector4 Canvas.Left="-139" Canvas.Top="-279" Width="1392" Height="1040" Opacity="0.3" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Left"  VerticalAlignment="Top">
+            <local:vector6 Canvas.Left="-84" Canvas.Top="-522" Width="1100" Height="1100" Opacity="0.3" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <local:vector5 Canvas.Left="-84" Canvas.Top="-363" Width="1281" Height="1200" Opacity="0.2" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <local:vector4 Canvas.Left="-102" Canvas.Top="-486" Width="1392" Height="1040" Opacity="0.3" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Left"  VerticalAlignment="Top">
                 <local:vector4.RenderTransform>
                     <RotateTransform Angle="-105.14"/>
                 </local:vector4.RenderTransform>
@@ -78,15 +108,22 @@
                 <TextBlock Text="Звук" Foreground="White" FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Left" />
                 <ToggleButton x:Name="soundToggleButton" Width="50"  Height="28" Style="{StaticResource CustomToggleButton}" Margin="10,0"/>
             </StackPanel>
-            <local:vector1 x:Name="vector1" Canvas.Left="226" Canvas.Top="159" Width="404" Height="382" Opacity="0.4" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-            <local:vector2 Canvas.Left="177" Canvas.Top="83" Width="502" Height="534" Opacity="0.3" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-            <local:vector0 Canvas.Left="278" Canvas.Top="203" Width="294" Height="294" Opacity="1" HorizontalAlignment="Center" VerticalAlignment="Top">
-                <Button Width="220" Height="150" Style="{StaticResource TransparentButton}" BorderBrush="Transparent" Content="Запустить" FontFamily="Segoe UI Variable" Click="Zapusk1" Foreground="White" FontSize="34"></Button>
-            </local:vector0>
-            <Button Content="Отмена" Canvas.Left="36" Canvas.Top="584" Width="136" Height="57" 
+            <local:vector1 x:Name="vector1" Canvas.Left="223" Canvas.Top="-32" Width="404" Height="382" Opacity="0.4" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <local:vector2 Canvas.Left="215" Canvas.Top="-95" Width="502" Height="534" Opacity="0.3" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <local:vector0 Canvas.Left="278" Canvas.Top="-32" Width="294" Height="294" Opacity="1" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+
+            <Button Content="Отмена" Canvas.Left="679" Canvas.Top="505" Width="136" Height="57" 
                 BorderThickness="2" 
                 Style="{StaticResource TransparentButton}"
-                HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                HorizontalAlignment="Left" VerticalAlignment="Top"/>
+
+            <ProgressBar x:Name="progressBar" Value="10" Canvas.Bottom="50" Canvas.Left="35" Width="780" Height="16" 
+                     Foreground="#4466FF" Style="{StaticResource RoundedProgressBar}" Background="Transparent" Opacity="1" HorizontalAlignment="Center" Canvas.Top="604" VerticalAlignment="Top"/>
+
+            <!-- TextBlock for displaying percentage -->
+            <TextBlock x:Name="progressText" Text="{Binding Value, ElementName=progressBar, StringFormat=\{0\}%}"
+                   Canvas.Bottom="100" Canvas.Left="45" Foreground="White" FontSize="16"/>
+            
         </Canvas>
     </Grid>
 </Window>

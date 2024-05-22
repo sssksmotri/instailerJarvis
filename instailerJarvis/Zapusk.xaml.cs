@@ -10,17 +10,16 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace instailerJarvis
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Логика взаимодействия для Zapusk.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class Zapusk : Window
     {
-        public MainWindow()
+        public Zapusk()
         {
             InitializeComponent();
         }
@@ -29,9 +28,7 @@ namespace instailerJarvis
 
         private void Zapusk1(object sender, RoutedEventArgs e)
         {
-            Zapusk zapusk = new Zapusk();
-            zapusk.Show();
-            this.Close();
+
         }
     }
 }

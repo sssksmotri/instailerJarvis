@@ -1,0 +1,52 @@
+﻿<Window x:Class="instailerJarvis.jarvisdalee"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:instailerJarvis"
+        mc:Ignorable="d"
+        Title="jarvisdalee"  MaxHeight="700" MaxWidth="850"  MinHeight="700" MinWidth="850" WindowStyle="None" Background="Black">
+    <Window.Resources>
+        <Style x:Key="TransparentButton" TargetType="Button">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" 
+                        BorderBrush="{TemplateBinding BorderBrush}" 
+                        BorderThickness="{TemplateBinding BorderThickness}" 
+                        CornerRadius="15" >
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Opacity" Value="0.8"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="textdesign" TargetType="TextBlock">
+            
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Canvas>
+            <local:vector6 Opacity="0.3" Canvas.Left="363" Canvas.Top="218"/>
+            <local:vector4 Opacity="0.3" RenderTransformOrigin="0.5,0.5" Canvas.Left="399" Canvas.Top="-63">
+                <local:vector4.RenderTransform>
+                    <RotateTransform Angle="-110.14"/>
+                </local:vector4.RenderTransform>
+            </local:vector4>
+            <local:vector0 Canvas.Left="706" Canvas.Top="203" Width="294" Height="294" Opacity="1" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <local:vector2 Canvas.Left="515" Canvas.Top="83" Width="502" Height="534" Opacity="0.3" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <local:vector1 x:Name="vector1" Canvas.Left="596" Canvas.Top="159" Width="404" Height="382" Opacity="0.4" HorizontalAlignment="Left" VerticalAlignment="Center" Loaded="vector1_Loaded"/>
+            <Button Content="Отмена" Canvas.Left="10" Canvas.Top="584" Width="136" Height="57" 
+                BorderThickness="2" 
+                Style="{StaticResource TransparentButton}" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        </Canvas>
+        <TextBlock Width="400" Height="300" VerticalAlignment="Top"  Background="#4466FF"  Margin="15" HorizontalAlignment="Left"></TextBlock>
+    </Grid>
+</Window>
