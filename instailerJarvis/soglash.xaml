@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:instailerJarvis"
         mc:Ignorable="d"
-        Title="soglash" WindowState="Maximized" WindowStartupLocation="CenterOwner" MaxHeight="700" MaxWidth="850"  MinHeight="700" MinWidth="850"  Background="Black">
+        Title="soglash" WindowState="Maximized" WindowStartupLocation="CenterScreen" MaxHeight="700" MaxWidth="850"  MinHeight="700" MinWidth="850"  Background="Black">
     <Window.Resources>
         <Style x:Key="TransparentButton" TargetType="Button">
             <Setter Property="Background" Value="Transparent"/>
@@ -34,7 +34,7 @@
         <StackPanel VerticalAlignment="Top" Margin="0,10,0,0">
             <local:lux></local:lux>
             <Button  Width="350" Margin="0,20,0,0" Height="35" HorizontalAlignment="Left" FontFamily="Segoe UI Variable" Content="Пользовательское соглашение"  
-            Style="{StaticResource TransparentButton}" FontSize="20"  Background="#4466FF"/>
+            Style="{StaticResource TransparentButton}" FontSize="20"  Background="#4466FF" Click="Button_Click_1"/>
         </StackPanel>
         <Border HorizontalAlignment="Center" Background="#2c2a2a" VerticalAlignment="Center" CornerRadius="29" Width="780" Height="359">
             <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled" >

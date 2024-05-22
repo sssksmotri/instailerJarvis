@@ -7,14 +7,13 @@
         mc:Ignorable="d"
         Title="MainWindow" WindowState="Maximized" WindowStartupLocation="CenterOwner" MaxHeight="700" MaxWidth="850"  MinHeight="700" MinWidth="850"  Background="Black" >
     <Window.Resources>
-        <!-- Material Design Resource Dictionaries -->
+
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Light.xaml"/>
             </ResourceDictionary.MergedDictionaries>
 
 
-            <!-- Шаблон для кнопки с закругленными углами -->
             <Style x:Key="TransparentButton" TargetType="Button">
                 <Setter Property="Background" Value="Transparent"/>
                 <Setter Property="Foreground" Value="White"/>
@@ -37,7 +36,7 @@
                 </Setter>
             </Style>
 
-            <!-- Шаблон для переключателя с закругленными углами -->
+
             <Style x:Key="CustomToggleButton" TargetType="ToggleButton">
                 <Setter Property="Template">
                     <Setter.Value>

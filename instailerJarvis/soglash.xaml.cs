@@ -29,5 +29,12 @@ namespace instailerJarvis
             MessageBox.Show("А дальше нету(");
         }
         private void otmena(object sender, RoutedEventArgs e) { Close(); }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            soglash soglash = new soglash();
+            soglash.Show();
+            this.Close();
+        }
     }
 }
