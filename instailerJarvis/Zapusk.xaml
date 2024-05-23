@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:instailerJarvis"
         mc:Ignorable="d"
-               Title="Zapusk" WindowState="Maximized" WindowStartupLocation="CenterOwner" MaxHeight="700" MaxWidth="850"  MinHeight="700" MinWidth="850"  Background="Black" >
+               Title="Zapusk" WindowState="Maximized" WindowStartupLocation="CenterScreen" MaxHeight="700" MaxWidth="850"  MinHeight="700" MinWidth="850"  Background="Black" >
     <Window.Resources>
 
         <ResourceDictionary>
