@@ -53,7 +53,7 @@
                                 <Trigger Property="IsChecked" Value="True">
                                     <Setter TargetName="rectangle" Property="RenderTransform">
                                         <Setter.Value>
-                                            <TranslateTransform X="40"/>
+                                            <TranslateTransform X="30"/>
                                         </Setter.Value>
                                     </Setter>
                                 </Trigger>

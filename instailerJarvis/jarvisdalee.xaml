@@ -93,7 +93,7 @@
                 <Grid>
                     <TextBlock x:Name="SecondTextBlock" VerticalAlignment="Center" HorizontalAlignment="Center" TextWrapping="Wrap" Padding="5" FontSize="20" FontFamily="Segoe UI Variable" 
                        Text="Jarvis также поддерживает персонализацию, позволяя настроить его под ваши предпочтения и потребности. Вы можете настроить язык, голос и другие параметры, чтобы Jarvis был максимально удобным для вас" Foreground="White"/>
-                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="0,20,0,0" >
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10,20,0,0" >
                         <Button x:Name="button1" Width="110" Height="7" Margin="0,15,0,0"   Style="{StaticResource TransparentButton2}" Click="Button_Click"/>
                         <Button x:Name="button2" Width="110" Height="7" Margin="20,15,0,0"   Style="{StaticResource TransparentButton3}" Click="Button_Click_1"/>
                     </StackPanel>
